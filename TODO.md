@@ -1,1 +1,2 @@
 - production build is not actually building with production env var
+- bump dependency numbers
