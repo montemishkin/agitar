@@ -3,3 +3,5 @@
 - google page speed insights
 - google analytics (or does github offer some analytics on github.io pages?)
 - add link to source on github
+- add pre-commit hook to run production build
+- favicon
