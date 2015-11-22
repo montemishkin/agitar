@@ -1,0 +1,31 @@
+{
+  "name": "agitar",
+  "version": "0.0.0",
+  "description": "colorful",
+  "author": "Monte Mishkin",
+  "private": true,
+  "devDependencies": {
+    "babel-core": "5.8.25",
+    "babel-eslint": "4.1.3",
+    "babel-loader": "5.3.2",
+    "babel-runtime": "5.8.25",
+    "del": "2.0.2",
+    "eslint": "1.6.0",
+    "eslint-loader": "1.1.0",
+    "eslint-plugin-react": "3.5.1",
+    "gulp": "3.9.0",
+    "gulp-concat": "2.6.0",
+    "gulp-env": "0.2.0",
+    "gulp-minify-css": "1.2.1",
+    "karma": "0.13.10",
+    "vinyl-named": "1.1.0",
+    "webpack": "1.12.2",
+    "webpack-stream": "2.1.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.0",
+    "lodash": "3.10.1",
+    "react": "0.14.0",
+    "react-dom": "0.14.0"
+  }
+}
