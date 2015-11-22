@@ -1,2 +1,4 @@
 - production build is not actually building with production env var
 - bump dependency numbers
+- google page speed insights
+- google analytics (or does github offer some analytics on github.io pages?)
