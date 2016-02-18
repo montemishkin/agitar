@@ -1,10 +1,7 @@
 // fix browser land
 import 'babel-polyfill'
-// third party imports
-import React from 'react'
-import ReactDOM from 'react-dom'
 // local imports
-import App from './views/App'
+import runCanvasThingy from './runCanvasThingy'
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -27,7 +24,4 @@ if (process.env.NODE_ENV === 'production') {
 ga('send', 'pageview')
 
 
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-)
+runCanvasThingy(document.getElementById('canvas'))
