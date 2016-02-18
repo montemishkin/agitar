@@ -8,7 +8,7 @@ import map from 'util/map'
 // desired dimensions of a single color matrix cell
 const targetCellWidth = 10
 const targetCellHeight = 10
-// single `ColorMatrix` instance used between all `Sage` components
+// single `ColorMatrix` instance used between calls to `runCanvasThingy`
 // (dimensions will be rewritten on load, but need to start somewhere)
 const colorMatrix = new ColorMatrix(90, 160)
 
@@ -50,7 +50,6 @@ function addEventHandlers(canvas, context) {
 
 
 function onResize(canvas, context) {
-    // window dimensions
     const {innerWidth, innerHeight} = window
 
     // set canvas dimensions to window dimensions
@@ -62,7 +61,6 @@ function onResize(canvas, context) {
     colorMatrix.rows = Math.ceil(innerHeight / targetCellHeight)
     colorMatrix.cols = Math.ceil(innerWidth / targetCellWidth)
 
-    // rerender to canvas
     colorMatrix.renderTo(context)
 }
 
