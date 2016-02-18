@@ -1,5 +1,3 @@
-// fix browser land
-import 'babel-polyfill'
 // local imports
 import runCanvasThingy from './runCanvasThingy'
 
