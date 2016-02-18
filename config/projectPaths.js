@@ -23,8 +23,8 @@ module.exports = {
     // entry point
     entry: entry,
     // globs
-    buildGlob: build + '*',
     cssGlob: path.join(rootDir, 'styles', '*'),
+    testsGlob: path.join(sourceDir, '**', '_tests', 'test_*.js'),
     // configuration files
     eslintConfig: path.join(configDir, 'eslint.json'),
     karmaConfig: path.join(configDir, 'karma.js'),

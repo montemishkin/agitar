@@ -1,5 +1,5 @@
 // fix browser land
-import 'babel-core/polyfill'
+import 'babel-polyfill'
 // third party imports
 import React from 'react'
 import ReactDOM from 'react-dom'

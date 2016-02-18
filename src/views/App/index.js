@@ -1,7 +1,7 @@
 // third party imports
 import React, {Component} from 'react'
 import classNames from 'classnames'
-import throttle from 'lodash/function/throttle'
+import throttle from 'lodash/throttle'
 // local imports
 import ColorMatrix from './ColorMatrix'
 import map from 'util/map'

@@ -9,9 +9,17 @@ var projectPaths = require('./projectPaths')
 var webpackConfig = require(projectPaths.webpackConfig)
 
 
+var testsGlob = projectPaths.testsGlob
+// stay sane people
+if (typeof testsGlob === 'undefined') {
+    throw new Error('Hey.  Where\'s the tests glob?')
+}
+console.log('Running all tests matching this glob:\n', testsGlob)
+
+
 // annoying hack to be able to dynamically set keys on object
 var preprocessors = {}
-preprocessors[projectPaths.testsGlob] = ['webpack', 'sourcemap']
+preprocessors[testsGlob] = ['webpack', 'sourcemap']
 
 
 module.exports = function (config) {
@@ -23,12 +31,18 @@ module.exports = function (config) {
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: [
             'mocha',
-            'sinon-chai',
         ],
+
+        client: {
+            mocha: {
+                // change Karma's debug.html to the mocha web reporter
+                reporter: 'html',
+            },
+        },
 
         // list of files / patterns to load in the browser
         files: [
-            projectPaths.testsGlob,
+            testsGlob,
         ],
 
         // // list of files to exclude
@@ -62,17 +76,24 @@ module.exports = function (config) {
 
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        // logLevel: config.LOG_DISABLE,
+        // logLevel: config.LOG_DEBUG,
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
         browsers: [
-            // 'Chrome',
-            'Firefox',
+            'Chrome',
+            // 'Firefox',
             // 'Safari',
         ],
+
+        plugins: [
+            'karma-chrome-launcher',
+            // 'karma-firefox-launcher',
+            // 'karma-safari-launcher',
+            'karma-mocha',
+            'karma-mocha-reporter',
+            'karma-sourcemap-loader',
+            'karma-webpack',
+        ]
     })
 }
-
-
-// end of file
